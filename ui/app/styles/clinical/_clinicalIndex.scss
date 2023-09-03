@@ -1,0 +1,40 @@
+@import "patientSearch";
+@import "visit";
+@import "consultation";
+@import "diagnosis";
+@import "disposition";
+@import "treatment/treatment";
+@import "observations";
+@import "patientDashboard";
+@import "charts";
+@import "orders";
+@import "program";
+@import "bacteriology";
+@import "patientSearchDesktop";
+@import "observationsDesktop";
+@import "drugOrderTemplate";
+@import "patientMonitering";
+@import "tableMobile";
+@import "scrollable-tabs";
+
+body {
+    font-size: 14px;
+    //@media (max-width : 768px){
+    //  font-size: 15px;
+    //}
+}
+
+.consultation-content {
+    margin-top: 45px;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 95px;
+
+        .template-control {
+            top: 150px;
+            box-shadow: none;
+        }
+    }
+
+    
+}

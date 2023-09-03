@@ -1,0 +1,21 @@
+<div class="order-list" alert-on-exit>
+    <div ng-class="{'disableOrdersInRetroMode':isRetrospectiveMode()}">
+        <div class="infoMsgRetrospectiveModeEnabled" ng-if="isRetrospectiveMode()">
+            <i class="fa fa-info-circle"></i>
+            <span ng-bind-html="'ORDER_NOT_ALLOWED_IN_RETROSPECTIVE_MESSAGE'|translate"></span>
+        </div>
+        <div ng-repeat="tab in tabs" class="{{tab.klass}} clearfix">
+            <div class="order-grid"  ng-click="activateTab(tab)">
+                <h2 class="order-title">
+                    <i class="fa fa-caret-right" ng-show="activeTab != tab"></i>
+                    <i class="fa fa-caret-down ng-hide" ng-show="activeTab == tab"></i>
+                    {{tab.name}}
+                </h2>
+            </div>
+            <div ng-if="activeTab === tab" class="dashboard-section">
+                <div class="dashboard-section-wrapper clearfix" ng-include="'consultation/views/orderTemplateViews/ordersTemplate.html'">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
